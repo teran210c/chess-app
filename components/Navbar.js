@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="flex items-center justify-between px-6 py-4 bg-blue-600 text-white">
       {/* Logo */}
       <div className="text-2xl font-bold">
-        <a href="/">MiLogo</a>
+        <Link href="/">MiLogo</Link>
       </div>
 
       {/* Hamburger Menu for Small Screens */}
@@ -35,9 +35,9 @@ const Navbar = () => {
 
       {/* Links for Larger Screens */}
       <div className={`md:flex space-x-6 ${menuOpen ? 'block' : 'hidden'} md:block`}>
-        <a href="/" className="block mt-2 md:mt-0 hover:text-blue-300">Inicio</a>
-        <a href="/about" className="block mt-2 md:mt-0 hover:text-blue-300">Acerca de</a>
-        <a href="/contact" className="block mt-2 md:mt-0 hover:text-blue-300">Contacto</a>
+        <Link href="/" className="block mt-2 md:mt-0 hover:text-blue-300">Inicio</Link>
+        <Link href="/about" className="block mt-2 md:mt-0 hover:text-blue-300">Acerca de</Link>
+        <Link href="/contact" className="block mt-2 md:mt-0 hover:text-blue-300">Contacto</Link>
       </div>
 
       {/* Login Button */}

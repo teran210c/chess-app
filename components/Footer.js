@@ -15,10 +15,10 @@ function Footer() {
 
           {/* Enlaces de Navegación */}
           <div className="flex space-x-8 mt-6 md:mt-0">
-            <a href="#" className="hover:underline">Inicio</a>
-            <a href="#" className="hover:underline">Acerca de</a>
-            <a href="#" className="hover:underline">Servicios</a>
-            <a href="#" className="hover:underline">Contacto</a>
+            <Link href="#" className="hover:underline">Inicio</Link>
+            <Link href="#" className="hover:underline">Acerca de</Link>
+            <Link href="#" className="hover:underline">Servicios</Link>
+            <Link href="#" className="hover:underline">Contacto</Link>
           </div>
         </div>
 
