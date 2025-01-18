@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import Image from 'next/image';
 
 function CarouselSection() {
     const settings = {
@@ -69,7 +70,7 @@ function CarouselSection() {
         {items.map((item) => (
           <div key={item.id} className="p-4">
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
                 className="w-32 h-32 mx-auto mb-4"

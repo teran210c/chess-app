@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 function HeroSection() {
   return (
@@ -23,7 +24,7 @@ function HeroSection() {
 
       {/* Right Image */}
       <div className="md:w-1/2 mb-8 md:mb-0">
-        <img
+        <Image
           src="/mano.jpeg"
           alt="Hero section illustration"
           className="rounded-xl shadow-lg"
