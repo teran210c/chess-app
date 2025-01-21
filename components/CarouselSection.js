@@ -36,7 +36,7 @@ function CarouselSection() {
       id: 1,
       title: 'Turntable',
       description: 'A classic way to play vinyl records.',
-      image: 'https://via.placeholder.com/150',
+      image: '/pion.jpeg',
     },
     {
       id: 2,
@@ -73,6 +73,8 @@ function CarouselSection() {
               <Image
                 src={item.image}
                 alt={item.title}
+                width={500}  // Cambia el ancho según sea necesario
+                height={400} // Cambia la altura según sea necesario
                 className="w-32 h-32 mx-auto mb-4"
               />
               <h3 className="text-xl font-semibold">{item.title}</h3>

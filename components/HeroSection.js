@@ -27,6 +27,8 @@ function HeroSection() {
         <Image
           src="/mano.jpeg"
           alt="Hero section illustration"
+          width={500}  // Cambia el ancho según sea necesario
+          height={400} // Cambia la altura según sea necesario
           className="rounded-xl shadow-lg"
         />
       </div>
