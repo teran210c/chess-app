@@ -10,12 +10,12 @@ import FeatureSection from "@/components/FeatureSection"
 export default function Home() {
   return (
     <>
-      <Navbar></Navbar>
-      <LoginBtn></LoginBtn>
-      <HeroSection></HeroSection>
+      <Navbar/>
+      <LoginBtn />
+      <HeroSection />
       <FeatureSection/>
-      <CarouselSection></CarouselSection>
-      <Footer></Footer>
+      <CarouselSection />
+      <Footer />
 
 
     </>

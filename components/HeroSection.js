@@ -7,17 +7,17 @@ function HeroSection() {
       {/* Left Text Content */}
       <div className="md:w-1/2 text-center md:text-left">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-          The best customer experiences
+        Descubre el Arte del Ajedrez: Aprende y Mejora
         </h1>
         <p className="text-gray-600 mb-6">
-          Zendesk provides the complete customer service solution that’s easy to use and scales with your business.
+          Tu aventura en el ajedrez comienza aquí.
         </p>
         <div className="space-x-4">
           <button className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-500">
-            Free trial
+            Inicia sesion
           </button>
           <button className="border border-green-600 text-green-600 px-6 py-2 rounded hover:bg-green-100">
-            View demo
+          Aprende más
           </button>
         </div>
       </div>
