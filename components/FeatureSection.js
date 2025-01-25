@@ -89,11 +89,9 @@ const FeatureSection = () => {
                 Técnicas Avanzadas
               </h1>
 
-              <p className="text-gray-500 dark:text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Provident ab nulla quod dignissimos vel non corrupti doloribus
-                voluptatum eveniet
-              </p>
+                <p className="text-gray-500 dark:text-gray-300">
+                  Aprender técnicas avanzadas de ajedrez puede mejorar significativamente tu juego. Desde aperturas estratégicas hasta tácticas complejas, dominar estos conceptos te permitirá anticipar los movimientos de tu oponente y planificar tus jugadas con mayor precisión.
+                </p>                            
 
               <a
                 href="#"

@@ -5,10 +5,14 @@ import Link from 'next/link';
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-blue-600 text-white">
+    <nav className="flex items-center justify-between px-6 py-4 bg-gray-800 text-white">
       {/* Logo */}
       <div className="text-2xl font-bold">
-        <Link href="/">MiLogo</Link>
+        <Link href="/"> <img
+              src="/chessLogo.jpg"
+              class="h-12"
+              alt="Flowbite Logo"
+            /></Link>
       </div>
 
       {/* Hamburger Menu for Small Screens */}
@@ -36,17 +40,17 @@ const Navbar = () => {
 
       {/* Links for Larger Screens */}
       <div className={`md:flex space-x-6 ${menuOpen ? 'block' : 'hidden'} md:block`}>
-        <Link href="/" className="block mt-2 md:mt-0 hover:text-blue-300">Inicio</Link>
-        <Link href="/about" className="block mt-2 md:mt-0 hover:text-blue-300">Acerca de</Link>
-        <Link href="/contact" className="block mt-2 md:mt-0 hover:text-blue-300">Contacto</Link>
+        <Link href="/" className="block mt-2 md:mt-0 hover:text-gray-400">Inicio</Link>
+        <Link href="/about" className="block mt-2 md:mt-0 hover:text-gray-400">Acerca de</Link>
+        <Link href="/contact" className="block mt-2 md:mt-0 hover:text-gray-400">Contacto</Link>
       </div>
 
       {/* Login Button */}
-      <button className="hidden md:block bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-300 hover:text-white">
+      <button className="hidden md:block bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600 hover:text-gray-300">
         Login
       </button>
     </nav>
   )
 }
 
-export default Navbar
+export default Navbar;

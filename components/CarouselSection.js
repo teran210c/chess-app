@@ -29,7 +29,6 @@ function CarouselSection() {
           },
         ],
       };
-    
 
   const items = [
     {
@@ -65,20 +64,27 @@ function CarouselSection() {
   ];
 
   return (
-    <section className="py-8 bg-teal-200">
+    <section className="py-8" style={{ backgroundColor: '#f4f4f4' }}>
       <Slider {...settings}>
         {items.map((item) => (
           <div key={item.id} className="p-4">
-            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div
+              className="p-6 rounded-lg shadow-lg text-center"
+              style={{ backgroundColor: '#dcdcdc' }}
+            >
               <Image
                 src={item.image}
                 alt={item.title}
                 width={500}  // Cambia el ancho según sea necesario
                 height={400} // Cambia la altura según sea necesario
-                className="w-32 h-32 mx-auto mb-4"
+                className="w-32 h-32 mx-auto mb-4 rounded"
               />
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              <h3 className="text-xl font-semibold" style={{ color: '#2d2d2d' }}>
+                {item.title}
+              </h3>
+              <p className="text-base" style={{ color: '#4d4d4d' }}>
+                {item.description}
+              </p>
             </div>
           </div>
         ))}
