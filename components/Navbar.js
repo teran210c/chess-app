@@ -9,7 +9,7 @@ const Navbar = () => {
       {/* Logo */}
       <div className="text-2xl font-bold">
         <Link href="/"> <img
-              src="/chessLogo.jpg"
+              src="/chess-circle.jpeg"
               class="h-12"
               alt="Flowbite Logo"
             /></Link>

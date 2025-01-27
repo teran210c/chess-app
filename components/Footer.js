@@ -9,10 +9,11 @@ function Footer() {
         {/* Logo y Descripción */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-8">
           <div>
-            <h2 className="text-2xl font-bold">MiLogo</h2>
-            <p className="mt-2 text-gray-400">
-              Creando las mejores experiencias digitales para todos.
-            </p>
+          <Link href="/"> <img
+              src="/chess-circle.jpeg"
+              class="h-12"
+              alt="Flowbite Logo"
+            /></Link>
           </div>
 
           {/* Enlaces de Navegación */}
@@ -29,7 +30,11 @@ function Footer() {
 
         {/* Información de Copyright */}
         <div className="text-center text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} MiLogo. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} <Link href="/"> <img
+              src="/chess-circle.jpeg"
+              class="h-12"
+              alt="Flowbite Logo"
+            /></Link>. Todos los derechos reservados.
         </div>
       </div>
     </footer>
