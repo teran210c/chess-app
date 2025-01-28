@@ -14,6 +14,69 @@
   }
 }
 
+/* Estilos para las flechas */
+.slick-prev,
+.slick-next {
+  font-size: 0 !important; /* Hide default arrows */
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 40px !important; /* Increase clickable area */
+  height: 40px !important;
+  padding: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: #442c1f !important;
+  border: none;
+  outline: none;
+  background: rgba(41, 40, 40, 0.6) !important;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-next {
+  right: -50px;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: #503526 !important;
+  color: #fff !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 30px;
+  line-height: 1;
+  opacity: 1;
+  color: #503526;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: #fff;
+}
+
+.slick-prev:before {
+  content: "←";
+}
+
+.slick-next:before {
+  content: "→";
+}
+
+.slick-slider {
+  height: 400px;
+  position: relative;
+  padding: 0 60px; /* Add padding to make room for arrows */
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
