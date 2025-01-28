@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className={`md:flex space-x-6 ${menuOpen ? 'block' : 'hidden'} md:block`}>
         <Link href="/" className="block mt-2 md:mt-0 hover:text-gray-400" onClick={handleScrollTop}>Inicio</Link>
         <Link href="/about" className="block mt-2 md:mt-0 hover:text-gray-400">Acerca de</Link>
-        <Link href="/contact" className="block mt-2 md:mt-0 hover:text-gray-400">Contacto</Link>
+        <Link href="/contacto" className="block mt-2 md:mt-0 hover:text-gray-400">Contacto</Link>
       </div>
 
       {/* Login Button */}
