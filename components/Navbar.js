@@ -4,8 +4,10 @@ import Link from 'next/link';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const handleScrollTop = () => { window.scrollTo({ top: 0, behavior: 'smooth' });
+    
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-gray-800 text-white">
+    <nav className="sticky top-0 flex items-center justify-between px-6 py-4 bg-gray-800 text-white z-50">
       {/* Logo */}
       <div className="text-2xl font-bold">
         <Link href="/"> <img
@@ -40,7 +42,7 @@ const Navbar = () => {
 
       {/* Links for Larger Screens */}
       <div className={`md:flex space-x-6 ${menuOpen ? 'block' : 'hidden'} md:block`}>
-        <Link href="/" className="block mt-2 md:mt-0 hover:text-gray-400">Inicio</Link>
+        <Link href="/" className="block mt-2 md:mt-0 hover:text-gray-400 ">Inicio</Link>
         <Link href="/about" className="block mt-2 md:mt-0 hover:text-gray-400">Acerca de</Link>
         <Link href="/contact" className="block mt-2 md:mt-0 hover:text-gray-400">Contacto</Link>
       </div>
