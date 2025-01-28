@@ -12,14 +12,12 @@ import LevelSelector from "@/components/LevelSelector";
 export default function Home() {
   return (
     <>
-      <Navbar/>
       <LoginBtn />
       <HeroSection />
       <FeatureSection/>
       <CarouselSection />
       <LevelSelector />
       <ChessGame />
-      <Footer />
 
 
     </>

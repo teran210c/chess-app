@@ -5,8 +5,6 @@ import React from 'react'
 export const contacto = () => {
   return (
     <>
-        <Navbar />
-        <main className="contacto-container">
         <h1>Contáctanos</h1>
         <p>Deja tu mensaje y nos pondremos en contacto contigo.</p>
         <form className="contact-form">
@@ -21,8 +19,6 @@ export const contacto = () => {
           
           <button type="submit">Enviar</button>
         </form>
-      </main>
-        <Footer />
     
     </>
   )
