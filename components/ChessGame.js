@@ -1,61 +1,84 @@
-import React, { useState } from "react";
-import { Chess } from "chess.js";
-import { Chessboard } from "react-chessboard";
+import { Chess } from "chess.js"
+import { useState, useCallback, useEffect } from "react"
+import { Chessboard } from "react-chessboard"
 
-const RandomChessGame = () => {
-  const [game, setGame] = useState(new Chess());
+const ChessGame = () => {
+  const [game, setGame] = useState(new Chess())
+  const [status, setStatus] = useState("")
 
-  // Manejador para los movimientos del jugador
+  const updateStatus = useCallback(() => {
+    let newStatus = ""
+    if (game.isGameOver()) {
+      if (game.isCheckmate()) {
+        newStatus = `Checkmate! ${game.turn() === "w" ? "Black" : "White"} wins`
+      } else if (game.isDraw()) {
+        if (game.isStalemate()) {
+          newStatus = "Game over: Draw by stalemate"
+        } else if (game.isThreefoldRepetition()) {
+          newStatus = "Game over: Draw by threefold repetition"
+        } else if (game.isInsufficientMaterial()) {
+          newStatus = "Game over: Draw by insufficient material"
+        } else {
+          newStatus = "Game over: Draw"
+        }
+      } else {
+        newStatus = "Game over"
+      }
+    } else {
+      newStatus = `${game.turn() === "w" ? "White" : "Black"} to move`
+      if (game.isCheck()) {
+        newStatus += " (in check)"
+      }
+    }
+    setStatus(newStatus)
+  }, [game])
+
+  useEffect(() => {
+    updateStatus()
+  }, [game, updateStatus]) //This line was flagged as needing update, but the update provided did not offer a replacement.  Leaving as is for now.
+
   const handleMove = (move) => {
+    const { sourceSquare, targetSquare } = move
     const result = game.move({
-      from: move.from,
-      to: move.to,
-      promotion: "q", // Promocionar a reina por simplicidad
-    });
+      from: sourceSquare,
+      to: targetSquare,
+      promotion: "q", // Promote to queen for simplicity
+    })
 
-    if (result === null) return false; // Movimiento ilegal
+    if (result === null) return false // Illegal move
+    setGame(new Chess(game.fen())) // Update game state
+    setTimeout(makeRandomMove, 250)
+    return true
+  }
 
-    setGame(new Chess(game.fen())); // Actualizar estado del juego
-
-    // Esperar un poco antes de hacer el movimiento aleatorio
-    setTimeout(makeRandomMove, 250);
-    return true;
-  };
-
-  // Hacer un movimiento aleatorio para la computadora
   const makeRandomMove = () => {
-    const possibleMoves = game.moves();
-
-    // Terminar si no hay movimientos posibles
-    if (possibleMoves.length === 0) return;
-
-    const randomMove =
-      possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
-    game.move(randomMove);
-    setGame(new Chess(game.fen())); // Actualizar estado del juego
-  };
+    const possibleMoves = game.moves()
+    if (game.isGameOver() || possibleMoves.length === 0) return
+    const randomMove = possibleMoves[Math.floor(Math.random() * possibleMoves.length)]
+    game.move(randomMove)
+    setGame(new Chess(game.fen()))
+  }
 
   return (
-    <div
-      className="flex flex-col items-center justify-center min-h-screen"
-      style={{ backgroundColor: "#ead4b1" }}
-    >
-      <h1 className="text-3xl font-bold mb-6" style={{ color: "#503526" }}>
-        Juega contra un oponente aleatorio
-      </h1>
-      <div className="flex justify-center">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <h1 className="text-3xl font-bold mb-6 text-gray-800">Chess Game</h1>
+      <div className="bg-white p-4 rounded-lg shadow-lg">
         <Chessboard
           position={game.fen()}
-          onPieceDrop={(from, to) => handleMove({ from, to })}
+          onPieceDrop={(sourceSquare, targetSquare) => handleMove({ sourceSquare, targetSquare })}
           boardWidth={400}
-          boardOrientation="white"
         />
       </div>
-      <p className="mt-6 text-lg" style={{ color: "#503526" }}>
-        {/* {game.game_over() ? "¡Juego terminado!" : "Tu turno"} */}
-      </p>
+      <p className="mt-4 text-xl font-semibold text-gray-700">{status}</p>
+      <button
+        onClick={makeRandomMove}
+        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+        disabled={game.isGameOver()}
+      >
+        Make Random Move
+      </button>
     </div>
-  );
-};
+  )
+}
 
-export default RandomChessGame;
+export default ChessGame
