@@ -28,4 +28,4 @@ export const contacto = () => {
   )
 }
 
-export default Contacto;
+export default contacto;
