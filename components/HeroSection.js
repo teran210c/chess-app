@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; 
 
 function HeroSection() {
   return (
@@ -22,12 +23,14 @@ function HeroSection() {
           >
             Inicia sesión
           </button>
-          <button
-            className="border px-8 py-3 rounded-lg font-semibold hover:opacity-90"
-            style={{ borderColor: '#503526', color: '#503526', backgroundColor: '#d2b38f' }}
-          >
-            Aprende más
-          </button>
+          <Link href="/aprende">
+            <button
+              className="border px-8 py-3 rounded-lg font-semibold hover:opacity-90"
+              style={{ borderColor: '#503526', color: '#503526', backgroundColor: '#d2b38f' }}
+            >
+              Aprende más
+            </button>
+          </Link>
         </div>
       </div>
 
