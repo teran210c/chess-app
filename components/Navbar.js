@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="text-2xl font-bold">
         <Link href="/"> <img
               src="/chess-circle.png"
-              class="h-12"
+              className="h-24"
               alt="Flowbite Logo"
             /></Link>
       </div>

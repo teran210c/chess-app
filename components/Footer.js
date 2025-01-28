@@ -14,7 +14,7 @@ function Footer() {
         <div className="text-center text-sm text-gray-400">
            <img
               src="/chess-circle.png"
-              class="h-24"
+              className="h-40"
               alt="Flowbite Logo"
             />
             &copy; {new Date().getFullYear()} <Link href="/"></Link>. Todos los derechos reservados.
