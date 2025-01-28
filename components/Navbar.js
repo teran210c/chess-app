@@ -1,12 +1,18 @@
 import React from 'react';
 import { useState } from "react";
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const handleScrollTop = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (router.pathname !== '/') {
+        router.push('/');
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }  
     };
+  const router = useRouter();
     
   return (
     <nav className="sticky top-0 flex items-center justify-between px-6 py-4 bg-gray-800 text-white z-50">
