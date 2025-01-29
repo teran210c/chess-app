@@ -4,7 +4,7 @@ import CarouselSection from "@/components/CarouselSection";
 import Footer from "@/components/Footer";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import LoginBtn from "@/components/Login-Btn";
+import LoginBtn from "@/components/LoginBtn";
 import FeatureSection from "@/components/FeatureSection";
 import ChessGame from "@/components/ChessGame";
 import LevelSelector from "@/components/LevelSelector";
@@ -12,7 +12,6 @@ import LevelSelector from "@/components/LevelSelector";
 export default function Home() {
   return (
     <>
-      <LoginBtn />
       <HeroSection />
       <FeatureSection/>
       <CarouselSection />
