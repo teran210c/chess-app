@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 export const About = () => {
     return (
@@ -30,48 +29,15 @@ export const About = () => {
                 {/* Sección de "¿Por qué elegirnos?" */}
                 <section className="bg-white p-8 rounded-lg shadow-lg">
                     <h2 className="text-3xl font-semibold text-gray-900 mb-6">¿Por qué elegirnos?</h2>
-                    <ul className="space-y-4">
-                        <li className="flex items-start">
-                            <span className="flex-shrink-0">
-                                <Image
-                                    src="/icons/chess-icon.png" // Ruta a un ícono de ajedrez
-                                    alt="Chess Icon"
-                                    width={24}
-                                    height={24}
-                                    className="mr-4"
-                                />
-                            </span>
-                            <p className="text-lg text-gray-700">
-                                Clases y recursos diseñados por expertos.
-                            </p>
+                    <ul className="list-disc list-inside space-y-4 pl-5">
+                        <li className="text-lg text-gray-700">
+                            Clases y recursos diseñados por expertos.
                         </li>
-                        <li className="flex items-start">
-                            <span className="flex-shrink-0">
-                                <Image
-                                    src="/icons/practice-icon.png" // Ruta a un ícono de práctica
-                                    alt="Practice Icon"
-                                    width={24}
-                                    height={24}
-                                    className="mr-4"
-                                />
-                            </span>
-                            <p className="text-lg text-gray-700">
-                                Prácticas interactivas para mejorar tus habilidades.
-                            </p>
+                        <li className="text-lg text-gray-700">
+                            Prácticas interactivas para mejorar tus habilidades.
                         </li>
-                        <li className="flex items-start">
-                            <span className="flex-shrink-0">
-                                <Image
-                                    src="/icons/community-icon.png" // Ruta a un ícono de comunidad
-                                    alt="Community Icon"
-                                    width={24}
-                                    height={24}
-                                    className="mr-4"
-                                />
-                            </span>
-                            <p className="text-lg text-gray-700">
-                                Una comunidad activa y colaborativa.
-                            </p>
+                        <li className="text-lg text-gray-700">
+                            Una comunidad activa y colaborativa.
                         </li>
                     </ul>
                 </section>
