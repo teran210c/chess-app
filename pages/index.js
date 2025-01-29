@@ -15,7 +15,6 @@ export default function Home() {
       <HeroSection />
       <FeatureSection/>
       <CarouselSection />
-      <LevelSelector />
       <ChessGame />
 
 
