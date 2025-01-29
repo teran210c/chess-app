@@ -39,19 +39,14 @@ function HeroSection() {
           )}
 
           {/* Botón "Aprende más" */}
-          <button
-            onClick={() => {
-              if (!session) {
-                signIn("google"); // Si no hay sesión, inicia sesión con Google
-              } else {
-                window.location.href = "/aprende"; // Si hay sesión, redirige a /aprende
-              }
-            }}
-            className="border px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition duration-300"
-            style={{ borderColor: '#3498db', color: '#3498db', backgroundColor: '#ffffff' }}
-          >
-            Aprende más
-          </button>
+          <Link href="/aprende">
+            <button
+              className="border px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition duration-300"
+              style={{ borderColor: '#3498db', color: '#3498db', backgroundColor: '#ffffff' }}
+            >
+              Aprende más
+            </button>
+          </Link>
         </div>
       </div>
 
